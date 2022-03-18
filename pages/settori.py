@@ -1,35 +1,20 @@
 import dash
-
 dash.register_page(__name__, path="/")
-
-import pandas as pd
-import plotly.express as px
 import plotly.graph_objects as go
-import matplotlib.pyplot as plt
-import textwrap
-from dash import dcc
-from dash import html
-from dash import dash_table
-from dash.dependencies import Input, Output
-from mydata import df
-from dash import Dash, dcc, html, Input, Output, State, callback, dash_table
+from dash import dcc, html, Input, Output, callback, dash_table
 import plotly.express as px
 import pandas as pd
-from scipy import stats
-import numpy as np
 
-# df.style.format('{:.2f}')
-pd.options.mode.chained_assignment = None  # default='warn'
+pd.options.mode.chained_assignment = None
 
 pd.options.display.float_format = "{:,.2f}".format
 
-# app = Dash(__name__)
-# app = dash.Dash(__name__)
-# server = app.server
-
-
 # ----------------------------------------------------------------------------------------------------------------------
 #   TABELLA
+
+dff = pd.read_csv(r'\tesi\tesi\pages\dataClean.csv')
+df = dff.copy()
+
 dftable = df.groupby(
     ['ATECO 2007\ncodice', 'ATECO 2007\ndescrizione'], as_index=False).agg(
     {'ATECO 2007\ncodice': 'count',
@@ -1186,8 +1171,8 @@ def update_graph(scelta):
 
 # ----------------------------------------------------------------------------------------------------------------------
 @callback(
-    #Output("store-dropdown-value", "data"),
-    Output("store", "data"),# children= {dictionary} e riempie datatable
+    # Output("store-dropdown-value", "data"),
+    Output("store", "data"),  # children= {dictionary} e riempie datatable
     Input('datatable', 'selected_rows')
     # Input('datatable', 'derived_virtual_row_ids'),
     # selected_row_ids= Indices of selected rows if part of table after filtering

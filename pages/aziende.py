@@ -1,20 +1,10 @@
-from dash import Dash, dash_table, dcc, html, callback_context
-from dash.dependencies import Input, Output, State
-import pandas as pd
 import dash
-from dash import dash_table
-from dash import Dash, dcc, html, Input, Output, callback
-import plotly.express as px
+from dash import dcc, html, Input, Output, callback
 import pandas as pd
-import plotly.express as px
 import plotly.graph_objects as go
 from dash import dash_table
-import csv
-import time
-import pages.settori
-from pages import *
 import numpy as np
-import textwrap
+
 
 # pd.set_option('display.max_columns', None)
 suppress_callback_exceptions = True
@@ -289,7 +279,7 @@ layout = html.Div([
     html.Div(id="store-dropdown-value", children=[str(dati_iniziali)]),
     dcc.Interval(
         id='interval-component',
-        interval=1 * 600000,  # in milliseconds
+        interval=1 * 6000000000,  # in milliseconds
         n_intervals=0
     ),
 

@@ -1,10 +1,9 @@
 import dash
-from dash import dcc, callback, Output, Input, dash_table  # pip install dash
-import dash_labs as dl  # pip install dash-labs
-import dash_bootstrap_components as dbc  # pip install dash-bootstrap-components
-import plotly.express as px
-from dash import Dash, dcc, html, Input, Output, State, callback, dash_table
-from mydata import df
+import dash_labs as dl
+import dash_bootstrap_components as dbc
+from dash import dcc, html
+
+
 
 app = dash.Dash(
     __name__, plugins=[dl.plugins.pages],
