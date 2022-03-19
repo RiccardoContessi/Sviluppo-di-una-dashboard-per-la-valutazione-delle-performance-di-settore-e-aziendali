@@ -5,7 +5,6 @@ import plotly.graph_objects as go
 from dash import dash_table
 import numpy as np
 
-
 # pd.set_option('display.max_columns', None)
 suppress_callback_exceptions = True
 dash.register_page(__name__, path="/aziende")
@@ -1072,7 +1071,6 @@ def update_graph(scelta, data, selected_rows):  # SCELTA SE BEST/WORSE, DATA=SCE
      Input("roidropdown", "value")]
 )
 def populate_map(selected_rows, data, scelta):
-
     dftables_ = popola_df(data)
 
     df_ = dftables_.sort_values(by='Crescita fatturato (%)', ascending=False)
@@ -1546,7 +1544,6 @@ def update_line_chart(scelta, selected_rows, data):
         axis=1)
     df_["Ricavi medi 2017 - 2016"] = ricavi17_16
     df_["Ricavi medi 2017 - 2016"] = df_["Ricavi medi 2017 - 2016"].round(2)
-
 
     # ---------------------------------------------------------------------------------------------------------
     data1 = pd.to_datetime(2020, format='%Y')

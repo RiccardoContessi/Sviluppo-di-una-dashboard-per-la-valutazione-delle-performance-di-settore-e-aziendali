@@ -3,8 +3,6 @@ import dash_labs as dl
 import dash_bootstrap_components as dbc
 from dash import dcc, html
 
-
-
 app = dash.Dash(
     __name__, plugins=[dl.plugins.pages],
     # external_stylesheets=[dbc.themes.BOOTSTRAP],
@@ -37,12 +35,10 @@ navbar = dbc.NavbarSimple(
 
 app.layout = dbc.Container(
     [navbar, dl.plugins.page_container,
-     #dcc.Store(id="store-dropdown-value", data=None)
+     # dcc.Store(id="store-dropdown-value", data=None)
      ],
     fluid=True,
 )
 
 if __name__ == "__main__":
-    app.run_server(debug=True, port=8003,
-                   #dev_tools_ui=False, dev_tools_props_check=False
-                   )
+    app.run_server(debug=False)

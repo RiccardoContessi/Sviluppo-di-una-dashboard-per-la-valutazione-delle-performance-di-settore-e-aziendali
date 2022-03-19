@@ -1,4 +1,5 @@
 import dash
+
 dash.register_page(__name__, path="/")
 import plotly.graph_objects as go
 from dash import dcc, html, Input, Output, callback, dash_table
